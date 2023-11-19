@@ -10,7 +10,25 @@
 <script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
 <script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
 <script type="text/javascript" src="lib/hash.js"></script>
-
+<style>
+	  @media only screen and (max-width: 767px) and (orientation: portrait) {
+		/* Apply styles for portrait orientation on devices with a maximum width of 767 pixels */
+		.magazine-viewport {
+		  width: 100% !important;
+		  height: auto !important;
+		}
+  
+		.container {
+		  width: 100% !important;
+		  height: auto !important;
+		}
+  
+		.magazine {
+		  width: 100% !important;
+		  height: auto !important;
+		}
+	  }
+	</style>
 </head>
 <body>
 
@@ -102,11 +120,11 @@ function loadApp() {
 			
 			// Magazine width
 
-			width: 922,
+			width: 1400,
 
 			// Magazine height
 
-			height: 600,
+			height: 922,
 
 			// Duration in millisecond
 
