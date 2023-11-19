@@ -186,11 +186,24 @@ function loadApp() {
 
 	});
 
+
+	$(window).width(function(){
+  var win = $(this); //this = window
+  if (win.width() >= 820) { flipbook.turn('display','double');}
+  else {
+    flipbook.turn('display','single');
+  }
+});
+$(window).resize(function(){
+var win = $(this); //this = window
+if (win.width() >= 820) { flipbook.turn('display','double');}
+else {
+  flipbook.turn('display','single');
+}
+});
 	// Zoom.js
 
-	function checkMobile() {
- return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-}
+	
 
 	$('.magazine-viewport').zoom({
 		flipbook: $('.magazine'),
@@ -222,13 +235,11 @@ function loadApp() {
 				else
 					loadLargePage(page, pageElement);
 
-				$('.flipbook').turn('display', 'double');
-}
-else {
- $('.flipbook').turn('display', 'single');
-
+				
 			},
 
+						
+			
 			zoomIn: function () {
 
 				$('.thumbnails').hide();
