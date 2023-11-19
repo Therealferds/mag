@@ -187,20 +187,20 @@ function loadApp() {
 	});
 
 
-	$(window).width(function(){
-  var win = $(this); //this = window
-  if (win.width() >= 820) { flipbook.turn('display','double');}
-  else {
-    flipbook.turn('display','single');
-  }
-});
-$(window).resize(function(){
-var win = $(this); //this = window
-if (win.width() >= 820) { flipbook.turn('display','double');}
-else {
-  flipbook.turn('display','single');
-}
-});
+	if(window.innerWidth<768 && window.innerWidth >= 320) {
+           $('#flipbook').turn({
+            width:430,
+            height:650,
+            elevation:50,
+            inclination:50,
+            display: 'single',
+            autocenter:true,
+            acceleration: true,
+            gradients:true,
+            zoom:2,// you can change it as you desire
+               duration:50,
+          });
+         }
 	// Zoom.js
 
 	
