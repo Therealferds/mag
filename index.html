@@ -10,25 +10,7 @@
 <script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
 <script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
 <script type="text/javascript" src="lib/hash.js"></script>
-<style>
-	  @media only screen and (max-width: 767px) and (orientation: portrait) {
-		/* Apply styles for portrait orientation on devices with a maximum width of 767 pixels */
-		.magazine-viewport {
-		  width: 100% !important;
-		  height: auto !important;
-		}
-  
-		.container {
-		  width: 100% !important;
-		  height: auto !important;
-		}
-  
-		.magazine {
-		  width: 100% !important;
-		  height: auto !important;
-		}
-	  }
-	</style>
+
 </head>
 <body>
 
@@ -206,6 +188,10 @@ function loadApp() {
 
 	// Zoom.js
 
+	function checkMobile() {
+ return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+}
+
 	$('.magazine-viewport').zoom({
 		flipbook: $('.magazine'),
 
@@ -235,6 +221,11 @@ function loadApp() {
 					loadSmallPage(page, pageElement);
 				else
 					loadLargePage(page, pageElement);
+
+				$('.flipbook').turn('display', 'double');
+}
+else {
+ $('.flipbook').turn('display', 'single');
 
 			},
 
