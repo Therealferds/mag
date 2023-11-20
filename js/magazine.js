@@ -223,12 +223,12 @@ function resizeViewport() {
 	var width = $(window).width(),
 		height = $(window).height(),
 		options = $('.magazine').turn('options');
-
+		newHeight = 0.9 * height;
 	$('.magazine').removeClass('animated');
 
 	$('.magazine-viewport').css({
 		width: width,
-		height: height
+		height: newHeight
 	}).
 	zoom('resize');
 
